@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Weather Dashboard v2</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" async>  <!-- // Added async so it doesn't block rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" async></script>  <!-- // Added async so it doesn't block rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" async></script>  <!-- // Added async so it doesn't block rendering -->
 </head>
 <body class="bg-gradient-to-br from-blue-700 via-sky-800 to-blue-900 text-gray-100 min-h-screen flex flex-col">
   <header class="bg-transparent py-8 flex flex-col items-center">
@@ -48,15 +49,43 @@
         required
         class="w-full md:w-auto px-4 py-2 rounded-md border border-blue-300 bg-white/70 text-blue-900 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition font-semibold shadow-sm"
       />
+      <!--  REMOVED "GET MY WEATHER" BUTTON
       <button
         type="submit"
         class="relative px-6 py-2 rounded-md bg-yellow-200 hover:bg-yellow-300 text-blue-900 font-bold shadow-lg transition overflow-hidden"
       >
         <span class="relative z-10">Get My Weather</span>
         <span class="pointer-events-none absolute left-0 top-0 w-full h-1/2 bg-white/30 rounded-t-md"></span>
-      </button>
+      </button> -->
     </form>
     <section id="weather-output" class="w-full max-w-xl mt-8"></section>
+    <!-- Add a tall spacer to push images below the fold for lazy loading demo -->
+    <div class="h-[2500px]"></div>
+    <!-- Weather images row 1 -->
+    <div class="flex flex-row justify-center items-center gap-8 mt-8 mb-4">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=100&q=80" alt="Cloudy weather" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" alt="Sunny weather" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+    </div>
+    <!-- Weather images row 2 -->
+    <div class="flex flex-row justify-center items-center gap-8 mb-4">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=100&q=80" alt="Rainy weather" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=100&q=80" alt="Snowy weather" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+    </div>
+    <!-- Weather images row 3 -->
+    <div class="flex flex-row justify-center items-center gap-8 mb-4">
+      <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=100&q=80" alt="Foggy weather" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=100&q=80" alt="Frosty grass" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+    </div>
+    <!-- Weather images row 4 -->
+    <div class="flex flex-row justify-center items-center gap-8 mb-4">
+      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=100&q=80" alt="Thunderstorm" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=100&q=80" alt="Rainbow" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+    </div>
+    <!-- Weather images row 5 -->
+    <div class="flex flex-row justify-center items-center gap-8 mb-4">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=100&q=80" alt="Lightning" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=100&q=80" alt="Sunset" class="w-32 h-32 object-cover rounded-lg shadow-md" loading="lazy" />
+    </div>
   </main>
   <!-- Place and center background slider web componenet -->
   <div class="flex justify-center">
